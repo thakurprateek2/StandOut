@@ -601,7 +601,31 @@ public class Window extends FrameLayout {
 		/**
 		 * Layout params of the window associated with this Editor.
 		 */
-		StandOutLayoutParams mParams;
+		private StandOutLayoutParams mParams;
+
+		public StandOutLayoutParams getmParams() {
+			return mParams;
+		}
+
+		public void setmParams(StandOutLayoutParams mParams) {
+			this.mParams = mParams;
+		}
+
+		public float getAnchorX() {
+			return anchorX;
+		}
+
+		public void setAnchorX(float anchorX) {
+			this.anchorX = anchorX;
+		}
+
+		public float getAnchorY() {
+			return anchorY;
+		}
+
+		public void setAnchorY(float anchorY) {
+			this.anchorY = anchorY;
+		}
 
 		/**
 		 * The position of the anchor point as a percentage of the window's
@@ -620,7 +644,7 @@ public class Window extends FrameLayout {
 		 * Values must be between 0 and 1, inclusive. 0 means the left/top, 0.5
 		 * is the center, 1 is the right/bottom.
 		 */
-		float anchorX, anchorY;
+		private float anchorX, anchorY;
 
 		public Editor() {
 			mParams = getLayoutParams();
