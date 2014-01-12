@@ -5,7 +5,7 @@ import wei.mark.standout.ui.Window;
 import android.graphics.Color;
 import android.widget.FrameLayout;
 import android.widget.TextView;
-//comment to commit
+
 public class MostBasicWindow extends StandOutWindow {
 
 	@Override
