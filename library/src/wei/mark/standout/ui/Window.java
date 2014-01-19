@@ -8,6 +8,7 @@ import wei.mark.standout.StandOutWindow;
 import wei.mark.standout.StandOutWindow.StandOutLayoutParams;
 import wei.mark.standout.Utils;
 import wei.mark.standout.constants.StandOutFlags;
+import wei.mark.standout.listeners.OnSizeCahngedListner;
 import android.content.Context;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
@@ -84,6 +85,8 @@ public class Window extends FrameLayout {
 	 */
 	private final StandOutWindow mContext;
 	private LayoutInflater mLayoutInflater;
+	
+	private OnSizeCahngedListner onSizeCahngedListner;
 
 	public Window(Context context) {
 		super(context);
@@ -862,6 +865,23 @@ public class Window extends FrameLayout {
 				mParams = null;
 			}
 		}
+	}
+
+	@Override
+	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
+		// TODO Auto-generated method stub
+		super.onSizeChanged(w, h, oldw, oldh);
+		if(getOnSizeCahngedListner() != null){
+			getOnSizeCahngedListner().onSizeChangedListner(this, w, h, oldw, oldh);
+		}
+		
+	}
+	public OnSizeCahngedListner getOnSizeCahngedListner() {
+		return onSizeCahngedListner;
+	}
+
+	public void setOnSizeCahngedListner(OnSizeCahngedListner onSizeCahngedListner) {
+		this.onSizeCahngedListner = onSizeCahngedListner;
 	}
 
 	public static class WindowDataKeys {
